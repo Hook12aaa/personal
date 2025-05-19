@@ -30,7 +30,7 @@ function App() {
         <div className="headshot-container">
           <div className="profile-bg-blob">
             <img 
-              src="/src/assets/headshot.jpeg" 
+              src="/assets/headshot.jpeg" 
               alt="Anton Chepaldin headshot" 
               className="headshot-img-circle" 
             />
