@@ -2,6 +2,8 @@
 
 A radically simplified, experimental portfolio project. This version is a clean slate: minimal, fast, and focused on custom code—no templates, no bloat, just a direct showcase of my front-end skills and creative coding.
 
+[chepaldin.com](https://chepaldin.com/)
+
 ## 🚀 What is Version 2?
 
 - **Fully rebuilt from scratch**
@@ -63,7 +65,5 @@ A radically simplified, experimental portfolio project. This version is a clean 
 MIT License. See LICENSE file.
 
 ---
-
-
 
 Version 2 is intentionally simple. For the original, more complex version, see previous project
