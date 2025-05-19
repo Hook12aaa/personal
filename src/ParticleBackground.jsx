@@ -40,7 +40,6 @@ export default function ParticleBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // Draw connecting edges between close particles
       const particles = particlesRef.current;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {

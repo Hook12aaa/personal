@@ -64,6 +64,6 @@ MIT License. See LICENSE file.
 
 ---
 
-**This is a living experiment.**
+
 
 Version 2 is intentionally simple. For the original, more complex version, see previous project
