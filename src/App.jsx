@@ -62,7 +62,7 @@ function App() {
           </a>
           <a
             className="socialButton linkedinButton"
-            href="https://linkedin.com/in/antonchepaldin"
+            href="https://www.linkedin.com/in/anton-chepaldin/"
             target="_blank"
             rel="noopener noreferrer"
           >
