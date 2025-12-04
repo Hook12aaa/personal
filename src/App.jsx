@@ -47,6 +47,14 @@ function App() {
         <p className="bio-text">
           I work at the intersection of AI, systems and human behaviour. I reduce ambiguity so organisations can move with clarity.
         </p>
+        <a
+          className="socialButton linkedinButton primary-cta"
+          href="https://www.linkedin.com/in/anton-chepaldin/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="buttonText" data-text="Connect on LinkedIn">Connect on LinkedIn</span>
+        </a>
         <div className="social-buttons">
           <a
             className="socialButton githubButton"
@@ -59,13 +67,13 @@ function App() {
             <span className="bracket">]</span>
           </a>
           <a
-            className="socialButton linkedinButton"
-            href="https://www.linkedin.com/in/anton-chepaldin/"
+            className="socialButton kaggleButton"
+            href="https://www.kaggle.com/chepaldin"
             target="_blank"
             rel="noopener noreferrer"
           >
             <span className="bracket">[</span>
-            <span className="buttonText" data-text="LinkedIn">LinkedIn</span>
+            <span className="buttonText" data-text="Kaggle">Kaggle</span>
             <span className="bracket">]</span>
           </a>
         </div>

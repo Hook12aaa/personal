@@ -138,7 +138,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.6rem;
 }
 
 .headshot-img {
@@ -292,8 +292,8 @@ button:hover {
   gap: 1.2rem;
   justify-content: center;
   align-items: center;
-  margin-top: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -321,7 +321,8 @@ button:hover {
 
 .githubButton,
 .linkedinButton,
-.twitterButton {
+.twitterButton,
+.kaggleButton {
   color: #9c5cb4;
 }
 
@@ -447,7 +448,7 @@ button:hover {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary-blue);
-  margin: 0.5em 0 0.2em 0;
+  margin: 0.7em 0 0.35em 0;
   letter-spacing: 0.03em;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   text-shadow: 0 1px 8px rgba(110, 120, 255, 0.08);
@@ -457,7 +458,7 @@ button:hover {
 .bio-text {
   font-size: 1.08rem;
   color: #333;
-  margin: 0.3em 0 1.1em 0;
+  margin: 0.4em 0 1.25em 0;
   line-height: 1.6;
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   max-width: 420px;
@@ -469,6 +470,40 @@ button:hover {
   text-align: center;
 }
 
+.primary-cta { margin: 0.8rem 0 1rem; }
+.primary-cta {
+  position: relative;
+  border: 1px solid rgba(110, 120, 255, 0.35);
+  border-radius: 12px;
+  padding-left: clamp(1rem, 2.2vw, 1.6rem);
+  padding-right: clamp(1rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  font-weight: 800;
+  text-shadow: 0 0 4px rgba(110,120,255,0.16);
+  box-shadow: none;
+  transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+.primary-cta:hover {
+  box-shadow: 0 0 8px rgba(110,120,255,0.18), 0 0 12px rgba(230,66,152,0.12);
+}
+
+.primary-cta::before,
+.primary-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  transition: transform 220ms ease, opacity 160ms ease;
+}
+.primary-cta::before { border: 1px solid rgba(110,120,255,0.55); transform: translate(-2px, -2px); }
+.primary-cta::after { border: 1px solid rgba(230,66,152,0.38); transform: translate(2px, 2px); }
+.primary-cta:hover::before { transform: translate(0, 0); }
+.primary-cta:hover::after { transform: translate(0, 0); }
+
+
+.socialButton:hover { color: #9c5cb4; }
+
 .bio-highlight {
   color: var(--primary-pink);
   font-weight: 600;
@@ -476,3 +511,7 @@ button:hover {
   display: block;
   margin-top: 0.3em;
 }
+
+
+.primary-cta:hover .buttonText::before,
+.primary-cta:hover .buttonText::after { content: none; animation: none; }
