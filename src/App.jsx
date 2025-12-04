@@ -31,18 +31,19 @@ function App() {
           <div className="profile-bg-blob">
             <img 
               src="/assets/headshot.jpg" 
-              className="headshot-img-circle" 
+              className="headshot-img-circle"
+              alt="Headshot of Anton Chepaldin"
             />
           </div>
         </div>
         <div className="nameDisplay">
-          <span className="terminalPrefix">&gt;</span>
+          <span className="terminalPrefix" aria-hidden="true">&gt;</span>
           <span className="name-glitch">
             Anton_Chepaldin
-            <span className="cursor">_</span>
+            <span className="cursor" aria-hidden="true">_</span>
           </span>
         </div>
-        <h1 style={{ visibility: 'hidden', height: 0, margin: 0, padding: 0 }}>Anton Chepaldin</h1>
+        <h1 className="sr-only">Anton Chepaldin</h1>
         <p className="founder-title">AI, systems and human behaviour</p>
         <p className="bio-text">
           I work at the intersection of AI, systems and human behaviour. I reduce ambiguity so organisations can move with clarity.

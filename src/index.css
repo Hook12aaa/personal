@@ -37,6 +37,18 @@ body, html {
   background: #F5F2EE;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
+}
+
 body {
   color: #222;
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -430,6 +442,12 @@ button:hover {
   60% { opacity: 0.3; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+  .socialButton .buttonText::before,
+  .socialButton .buttonText::after { animation: none; }
+}
+
 @keyframes textGlitch {
   0% { transform: translate(0, 0); }
   20% { transform: translate(-2px, 1px); }
@@ -503,6 +521,13 @@ button:hover {
 
 
 .socialButton:hover { color: #9c5cb4; }
+
+.socialButton:focus-visible,
+.primary-cta:focus-visible {
+  outline: 2px solid rgba(110, 120, 255, 0.85);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
 
 .bio-highlight {
   color: var(--primary-pink);
