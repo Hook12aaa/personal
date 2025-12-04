@@ -30,8 +30,7 @@ function App() {
         <div className="headshot-container">
           <div className="profile-bg-blob">
             <img 
-              src="/assets/headshot.jpeg" 
-              alt="Anton Chepaldin headshot" 
+              src="/assets/headshot.jpg" 
               className="headshot-img-circle" 
             />
           </div>
@@ -44,10 +43,9 @@ function App() {
           </span>
         </div>
         <h1 style={{ visibility: 'hidden', height: 0, margin: 0, padding: 0 }}>Anton Chepaldin</h1>
-        <p className="founder-title">Founder @ Synspire</p>
+        <p className="founder-title">AI, systems and human behaviour</p>
         <p className="bio-text">
-          Building technology that connects artists and audiences.
-          Passionate about AI, music, and meaningful innovation.
+          I work at the intersection of AI, systems and human behaviour. I reduce ambiguity so organisations can move with clarity.
         </p>
         <div className="social-buttons">
           <a
@@ -68,16 +66,6 @@ function App() {
           >
             <span className="bracket">[</span>
             <span className="buttonText" data-text="LinkedIn">LinkedIn</span>
-            <span className="bracket">]</span>
-          </a>
-          <a
-            className="socialButton synspireButton"
-            href="https://synspireforartists.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="bracket">[</span>
-            <span className="buttonText" data-text="Synspire">Synspire</span>
             <span className="bracket">]</span>
           </a>
         </div>
