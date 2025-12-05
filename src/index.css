@@ -558,12 +558,13 @@ button:hover {
   margin: -0.25rem -0.6rem;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  width: 100%;
 }
 .outcomes-summary:hover .outcomes-seeall { color: var(--primary-blue); }
 .outcomes-details summary::-webkit-details-marker { display: none; }
 .outcomes-details summary::marker { content: ''; }
 .outcomes-seeall { text-transform: uppercase; font-weight: 800; letter-spacing: 0.04em; color: var(--primary-blue); }
-.outcomes-rolling { opacity: 0.95; color: #333; font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif; transition: opacity 300ms ease, transform 300ms ease; user-select: none; display: block; min-height: 1.2em; }
+.outcomes-rolling { opacity: 0.95; color: #333; font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif; transition: opacity 300ms ease, transform 300ms ease; user-select: none; display: block; min-height: 1.3em; line-height: 1.3em; white-space: nowrap; overflow: hidden; width: 100%; max-width: 560px; margin: 0 auto; }
 .outcomes-rolling.is-fading { opacity: 0; transform: translateY(-6px); }
 details[open] .outcomes-rolling,
 .outcomes-details.is-closing .outcomes-rolling { opacity: 0; transform: translateY(-6px); }
