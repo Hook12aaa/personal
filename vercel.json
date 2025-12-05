@@ -1,0 +1,11 @@
+{
+  "headers": [
+    {
+      "source": "/faq",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ]
+}
+

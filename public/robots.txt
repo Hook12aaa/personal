@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Disallow: /faq
+
+User-agent: PerplexityBot
+Allow: /faq
+
+User-agent: GPTBot
+Allow: /faq
+
+User-agent: ChatGPT-User
+Allow: /faq
+
+User-agent: ClaudeBot
+Allow: /faq
+
+User-agent: anthropic-ai
+Allow: /faq
+
+User-agent: Google-Extended
+Allow: /faq
+
+User-agent: CCBot
+Allow: /faq
+
+Sitemap: https://chepaldin.com/sitemap.xml
