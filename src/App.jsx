@@ -2,51 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import './App.css'
 import ParticleBackground from './ParticleBackground'
+import { pickInitialOutcomeIndex } from './personalization'
+import outcomes from './data/outcomes'
+import useImpactRotation from './hooks/useImpactRotation'
+import useImpactPopover from './hooks/useImpactPopover'
 
 function App() {
   const mountRef = useRef(null)
-  const detailsRef = useRef(null)
-  const popoverRef = useRef(null)
-  const isClosingRef = useRef(false)
-
-  const openPopover = () => {
-    const d = detailsRef.current
-    if (!d) return
-    if (outcomesOpen) return
-    d.classList.remove('is-closing')
-    d.open = true
-    setOutcomesOpen(true)
-  }
-
-  const smoothClose = () => {
-    if (isClosingRef.current) return
-    const d = detailsRef.current
-    if (!d || !d.open) return
-    isClosingRef.current = true
-    // remove open class to trigger reverse transition
-    d.classList.add('is-closing')
-    setOutcomesOpen(false)
-    window.setTimeout(() => {
-      d.open = false
-      d.classList.remove('is-closing')
-      isClosingRef.current = false
-    }, 450)
-  }
-  const [rollingIndex, setRollingIndex] = useState(0)
-  const [fading, setFading] = useState(false)
-  const [outcomesOpen, setOutcomesOpen] = useState(false)
-  const [reduceMotion, setReduceMotion] = useState(false)
-
-  const outcomes = [
-    "Enterprise GenAI programme trained 10,000+ colleagues with 97% satisfaction and two awards",
-    "AI mapping tool exposed complexity in the global IT delivery model and prompted a redesign by senior leader",
-    "Neurodiversity network grew from ~20 to 3,000 people across 9 countries with a scalable playbook",
-    "Global innovation hackathons mobilised 300+ colleagues across 9 countries to deliver 60+ solutions, recognised by 2 Enterprise awards",
-    "Delivered AI workshops for senior leaders and employee representatives, helping teams understand AI and apply it with confidence",
-    "AI toolkit helped markets localise global brand content far faster, reducing manual rework",
-    "Synspire’s AI tool gave artists and labels audience insights in minutes, not days, from local venues to online communities"
-    
-  ]
+  const { detailsRef, popoverRef, outcomesOpen, openPopover, smoothClose } = useImpactPopover()
+  const initialOutcomeIndex = pickInitialOutcomeIndex(outcomes)
+  const { rollingIndex, fading } = useImpactRotation(outcomes, outcomesOpen, initialOutcomeIndex)
 
   useEffect(() => {
     const mount = mountRef.current
@@ -65,37 +30,9 @@ function App() {
     }
   }, [])
 
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => setReduceMotion(!!mq.matches)
-    update()
-    mq.addEventListener?.('change', update)
-    return () => mq.removeEventListener?.('change', update)
-  }, [])
+  
 
-  useEffect(() => {
-    if (reduceMotion || outcomesOpen) return
-    const id = setInterval(() => {
-      setFading(true)
-      setTimeout(() => {
-        setRollingIndex((i) => (i + 1) % outcomes.length)
-        setFading(false)
-      }, 320)
-    }, 3000)
-    return () => clearInterval(id)
-  }, [reduceMotion, outcomesOpen, outcomes.length])
-
-  useEffect(() => {
-    if (!outcomesOpen) return
-    const onKey = (e) => {
-      if (e.key === 'Escape' || e.key === 'Esc') {
-        e.preventDefault()
-        smoothClose()
-      }
-    }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [outcomesOpen])
+  
 
   return (
     <div className="homepage-container">
