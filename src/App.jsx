@@ -98,7 +98,7 @@ function App() {
                 <ul className="outcomes-list">
                   <li>Enterprise GenAI programme trained <strong className="figure">10,000+</strong> colleagues with <strong className="figure">97%</strong> satisfaction and <span className="key">two awards</span>.</li>
                   <li>AI mapping tool exposed complexity in the global IT delivery model and <span className="key">prompted a redesign by senior leaders</span>.</li>
-                  <li>Neurodiversity network grew from <strong className="figure">~20</strong> to <strong className="figure">3,000</strong> across <strong className="figure">9</strong> countries with a scalable playbook.</li>
+                  <li>Neurodiversity network grew from <strong className="figure">~20</strong> to <strong className="figure">400 active members, 4000+ network</strong> across <strong className="figure">9</strong> countries with a scalable playbook.</li>
                   <li>Global innovation hackathons mobilised <strong className="figure">330+</strong> colleagues across <strong className="figure">9</strong> countries to deliver <strong className="figure">69</strong> solutions; recognised by <strong className="figure">2</strong> enterprise awards.</li>
                   <li>Delivered AI workshops for senior leaders and employee representatives, helping teams <span className="key">apply AI with confidence</span>.</li>
                   <li>AI toolkit helped markets localise global brand content <span className="key">far faster</span>, reducing manual rework.</li>
