@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import './App.css'
 import ParticleBackground from './ParticleBackground'
@@ -6,6 +6,7 @@ import { pickInitialOutcomeIndex } from './personalization'
 import outcomes from './data/outcomes'
 import useImpactRotation from './hooks/useImpactRotation'
 import useImpactPopover from './hooks/useImpactPopover'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const mountRef = useRef(null)
@@ -18,8 +19,6 @@ function App() {
     if (!mount) return 
     const width = mount.clientWidth
     const height = mount.clientHeight
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000)
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setSize(width, height)
     mount.appendChild(renderer.domElement)
@@ -140,6 +139,7 @@ function App() {
           </a>
         </div>
       </main>
+      <Analytics />
     </div>
   )
 }
