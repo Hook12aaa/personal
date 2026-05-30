@@ -1,0 +1,39 @@
+@media (max-width: 600px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .profile-bg-blob {
+    width: 210px;
+    height: 210px;
+  }
+
+  .headshot-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .social-buttons {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    padding: 0 0.5rem;
+  }
+
+  .socialButton {
+    font-size: 1rem;
+    min-width: 90px;
+    min-height: 44px;
+    padding: 0.5em 0.7em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-bg-blob::before {
+    animation: none;
+  }
+
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
