@@ -19,7 +19,7 @@
 html,
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
@@ -56,6 +56,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  overflow-y: auto;
 }
 
 .main-content {
@@ -295,6 +296,7 @@ body {
   .socialButton {
     font-size: 1rem;
     min-width: 90px;
+    min-height: 44px;
     padding: 0.5em 0.7em;
   }
 }
