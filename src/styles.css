@@ -155,45 +155,120 @@ body {
   max-width: 36ch;
 }
 
-.cta-primary {
-  display: inline-block;
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.7em 1.2em;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  margin-bottom: 1.2rem;
-}
-
-.cta-primary:hover {
-  background: var(--pink);
-}
-
-.social-links {
+.social-buttons {
   display: flex;
-  gap: 1rem;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.social-link {
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
+.socialButton {
+  color: #9c5cb4;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: clamp(1px, 0.2vw, 2px);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: fit-content;
+  filter: brightness(1.1);
+  transition: transform 0.3s ease;
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  min-width: 110px;
+  justify-content: center;
+  text-align: center;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-.social-link:hover {
+.socialButton:hover {
+  color: #9c5cb4;
+}
+
+.socialButton .buttonText {
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  mix-blend-mode: difference;
+}
+
+.socialButton .bracket {
+  font-size: 1.2em;
+  font-family: var(--font-mono);
+  color: #9c5cb4;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  user-select: none;
+  transition: color 0.2s;
+  pointer-events: none;
+}
+
+.socialButton:hover .bracket {
   color: var(--pink);
 }
 
-.bracket {
-  color: var(--text-secondary);
+.primary-cta {
+  position: relative;
+  margin: 0.8rem 0 1rem;
+  border: 1px solid rgba(110, 120, 255, 0.35);
+  border-radius: 12px;
+  padding-left: clamp(1rem, 2.2vw, 1.6rem);
+  padding-right: clamp(1rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  font-weight: 800;
+  color: var(--blue);
+  text-shadow: 0 0 4px rgba(110, 120, 255, 0.16);
+  box-shadow: none;
+  transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.primary-cta:hover {
+  box-shadow: 0 0 8px rgba(110, 120, 255, 0.18), 0 0 12px rgba(230, 66, 152, 0.12);
+}
+
+.primary-cta::before,
+.primary-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  transition: transform 220ms ease, opacity 160ms ease;
+}
+
+.primary-cta::before {
+  border: 1px solid rgba(110, 120, 255, 0.55);
+  transform: translate(-2px, -2px);
+}
+
+.primary-cta::after {
+  border: 1px solid rgba(230, 66, 152, 0.38);
+  transform: translate(2px, 2px);
+}
+
+.primary-cta:hover::before {
+  transform: translate(0, 0);
+}
+
+.primary-cta:hover::after {
+  transform: translate(0, 0);
+}
+
+.primary-cta:focus-visible {
+  outline: 2px solid rgba(110, 120, 255, 0.85);
+  outline-offset: 3px;
+}
+
+.kaggleButton {
+  color: #9c5cb4;
 }
 
 @media (max-width: 600px) {
@@ -209,6 +284,18 @@ body {
   .headshot-img {
     width: 150px;
     height: 150px;
+  }
+
+  .social-buttons {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    padding: 0 0.5rem;
+  }
+
+  .socialButton {
+    font-size: 1rem;
+    min-width: 90px;
+    padding: 0.5em 0.7em;
   }
 }
 
